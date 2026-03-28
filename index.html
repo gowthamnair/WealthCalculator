@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Althea Wealth Architect</title>
+    <link rel="stylesheet" href="style.css"> <script src="config.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="app.js" defer></script> </head>
+<body>
+
+<div class="app-container">
+    <aside class="input-panel dark-theme">
+        <header>
+            <img src="logo.png" alt="Althea Logo" class="logo">
+            <h1>Wealth Architect</h1>
+        </header>
+
+        <section class="accordion-section" id="section-general">
+            <h2>General Inputs</h2>
+            <div class="input-group">
+                <label>Monthly Savable (AED)</label>
+                <input type="number" id="in-savable" value="20000">
+            </div>
+            <div class="input-group">
+                <label>Current Savings (AED)</label>
+                <input type="number" id="in-savings" value="250000">
+            </div>
+            <div class="input-group">
+                <label>Already Invested (AED)</label>
+                <input type="number" id="in-invested" value="150000">
+            </div>
+            <div class="input-group">
+                <label>Annual Increment: <span id="label-increment">15%</span></label>
+                <input type="range" id="in-increment" min="0" max="100" value="15">
+            </div>
+        </section>
+
+        <section class="accordion-section" id="section-strategy">
+            <h2>Investment Strategy</h2>
+            <p>Asset: General Index Fund</p>
+            <div class="input-group strategy-selector">
+                <label>Growth Rate (Projected)</label>
+                <div class="slider-labels">
+                    <span>Conv. (4%)</span>
+                    <span class="active">Real. (7.2%)</span>
+                    <span>Opt. (10%)</span>
+                </div>
+                <input type="range" id="in-strategy" min="0" max="2" value="1" step="1">
+            </div>
+        </section>
+
+        <section class="accordion-section" id="section-goals">
+            <h2>Financial Goals</h2>
+            <div id="goal-list">
+                </div>
+            <button class="btn-secondary" id="btn-add-goal">+ Add Goal</button>
+        </section>
+
+        <button class="btn-primary" id="btn-calculate">Recalculate</button>
+    </aside>
+
+    <main class="results-panel light-theme">
+        <header>
+            <h2>Your Roadmap</h2>
+        </header>
+
+        <section class="overview-grid">
+            <div class="card card-wealth">
+                <h3>Projected Wealth</h3>
+                <p id="out-total-wealth" class="big-number">--</p>
+            </div>
+            <div class="card">
+                <h3>Total Contributions</h3>
+                <p id="out-total-contributions">--</p>
+            </div>
+            <div class="card card-compounding">
+                <h3>Total Compounding</h3>
+                <p id="out-total-compounding">--</p>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <h3>Summary Table</h3>
+            <div class="table-responsive">
+                <table id="table-summary">
+                    <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Target (AED)</th>
+                            <th>Target Date</th>
+                            <th>Priority</th>
+                            <th>Progress</th>
+                            <th>Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <h3>Year-on-Year Savings Plan</h3>
+            <div class="table-responsive">
+                <table id="table-yoy">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Monthly</th>
+                            <th>Notes/Reallocations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
